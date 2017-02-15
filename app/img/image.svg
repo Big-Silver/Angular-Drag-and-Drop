@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="46px" viewBox="0 0 50 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Imported Layers</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path id="path-1" d="M1.032675,13.8964865 L31.302425,21.9502703 L37.0734,0.569189189 L20.1978,7.94189189 L14.5726,2.89094595 L3.2291,7.27905405 L0.385875,13.725"></path>
+        <path id="path-3" d="M4.337725,8.88810811 C6.613775,9.49378378 8.9523,8.16081081 9.558675,5.91202703 C10.166275,3.66324324 8.81265,1.34878378 6.535375,0.743108108 C4.259325,0.137432432 1.9208,1.46918919 1.314425,3.71918919 C0.706825,5.96797297 2.06045,8.28243243 4.337725,8.88810811"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Imported-Layers" sketch:type="MSLayerGroup" transform="translate(0.000000, 1.000000)">
+            <path d="M34.141975,41.6493243 L34.141975,43.7837838 L32.304475,43.7837838" id="Stroke-1" stroke="#A5A7A0" sketch:type="MSShapeGroup"></path>
+            <path d="M30.12765,43.7837838 L25.77155,43.7837838" id="Stroke-2" stroke="#A5A7A0" stroke-dasharray="2.667,1.778" sketch:type="MSShapeGroup"></path>
+            <path d="M24.682525,43.7837838 L3.9935,43.7837838" id="Stroke-3" stroke="#A5A7A0" stroke-dasharray="2.667,1.778,2.667,1.778" sketch:type="MSShapeGroup"></path>
+            <path d="M2.904475,43.7837838 L1.066975,43.7837838 L1.066975,41.9594595" id="Stroke-4" stroke="#A5A7A0" sketch:type="MSShapeGroup"></path>
+            <path d="M1.066975,39.797027 L1.066975,35.4733784" id="Stroke-5" stroke="#A5A7A0" stroke-dasharray="2.667,1.778" sketch:type="MSShapeGroup"></path>
+            <path d="M1.066975,34.3921622 L1.066975,13.8514865" id="Stroke-6" stroke="#A5A7A0" stroke-dasharray="2.667,1.778,2.667,1.778" sketch:type="MSShapeGroup"></path>
+            <path d="M1.066975,12.7702703 L1.066975,10.9459459 L2.904475,10.9459459" id="Stroke-7" stroke="#A5A7A0" sketch:type="MSShapeGroup"></path>
+            <path d="M4.41735,10.9459459 L7.4431,10.9459459" id="Stroke-8" stroke="#A5A7A0" stroke-dasharray="1.852,1.235" sketch:type="MSShapeGroup"></path>
+            <path d="M8.20015,10.9459459 L10.03765,10.9459459" id="Stroke-9" stroke="#A5A7A0" sketch:type="MSShapeGroup"></path>
+            <g id="Group-12" transform="translate(8.575000, 17.027027)">
+                <mask id="mask-2" sketch:name="Clip 11" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-11"></g>
+                <path d="M2.47205,-14.9314865 L44.5753,-3.73135135 L35.634025,29.3971622 L-6.469225,18.197027 L2.47205,-14.9314865" id="Fill-10" fill="#979894" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            </g>
+            <g id="Group-15" transform="translate(19.600000, 7.297297)">
+                <mask id="mask-4" sketch:name="Clip 14" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Clip-14"></g>
+                <path d="M-1.917125,-7.80202703 L18.1594,-2.46040541 L12.790225,17.432027 L-7.2863,12.0916216 L-1.917125,-7.80202703" id="Fill-13" fill="#979894" sketch:type="MSShapeGroup" mask="url(#mask-4)"></path>
+            </g>
+            <path d="M17.2039,0.207972973 L48.121675,8.43324324 L39.877425,38.9772973 L8.960875,30.752027 L17.2039,0.207972973 L17.2039,0.207972973 Z" id="Stroke-16" stroke="#979894" stroke-width="2" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

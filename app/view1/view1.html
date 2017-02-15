@@ -1,0 +1,17 @@
+<div ng-controller="View1Ctrl" class="container">
+    <div class="container-fluid">
+        <div class="container1 row">
+            <div class="settingPanel" ng-click="test()">
+                <ul id="contactList">
+                    <li>
+                        <div class="contact h-card" data-contact="0" draggable="true" tabindex="0">
+                            <img src="http://sdk.ckeditor.com/samples/assets/draganddrop/img/hfin.png" alt="avatar" class="u-photo">Huckleberry Finn</div>
+                    </li>
+                </ul>        
+            </div>
+            <div class="mainContent">
+                <textarea data-ng-model="editor.value" data-ck-editor></textarea>
+            </div>
+        </div>        
+    </div>    
+</div>
