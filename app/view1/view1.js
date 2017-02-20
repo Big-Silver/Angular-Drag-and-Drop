@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute','ui.bootstrap'])
+angular.module('myApp.view1', ['ngRoute', 'ang-drag-drop', 'dndLists'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,32 +9,153 @@ angular.module('myApp.view1', ['ngRoute','ui.bootstrap'])
   });
 }])
 
-.directive('ckEditor', function () {
+.directive('ckeditor', function ($rootScope) {
     return {
-        require: '?ngModel',
-        link: function (scope, elm, attr, ngModel) {
-            var ck = CKEDITOR.replace(elm[0]);
-            if (!ngModel) return;
-            ck.on('instanceReady', function () {
-                ck.setData(ngModel.$viewValue);
-            });
-            function updateModel() {
-                scope.$apply(function () {
-                ngModel.$setViewValue(ck.getData());
+        require: 'ngModel',
+        link: function (scope, element, attr, ngModel) {
+            var editorOptions;
+            if (attr.ckeditor === 'minimal') {
+                // minimal editor
+                editorOptions = {
+                    height: 100,
+                    toolbar: [
+                        { name: 'basic', items: ['Bold', 'Italic', 'Underline'] },
+                        { name: 'links', items: ['Link', 'Unlink'] },
+                        { name: 'tools', items: ['Maximize'] },
+                        { name: 'document', items: ['Source'] },
+                    ],
+                    removePlugins: 'elementspath',
+                    resize_enabled: false
+                };
+            }
+
+            // enable ckeditor
+            var ckeditor = element.ckeditor(editorOptions);
+
+            // update ngModel on change
+            ckeditor.editor.on('change', function () {
+                ngModel.$setViewValue(this.getData());
             });
         }
-        ck.on('change', updateModel);
-        ck.on('key', updateModel);
-        ck.on('dataReady', updateModel);
-
-        ngModel.$render = function (value) {
-            ck.setData(ngModel.$viewValue);
-        };
-      }
     };
 })
 
 .controller('View1Ctrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+	$scope.models = {
+        selected: null,
+        templates: [
+            {type: "item", id: 2},
+            {type: "container", id: 1, columns: [[], []]}
+        ],
+        dropzones: {
+            "A": [
+                {
+                    "type": "container",
+                    "id": 1,
+                    "columns": [
+                        [
+                            {
+                                "type": "item",
+                                "id": "1"
+                            },
+                            {
+                                "type": "item",
+                                "id": "2"
+                            }
+                        ],
+                        [
+                            {
+                                "type": "item",
+                                "id": "3"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "type": "item",
+                    "id": "4"
+                },
+                {
+                    "type": "item",
+                    "id": "5"
+                },
+                {
+                    "type": "item",
+                    "id": "6"
+                }
+            ],
+            "B": [
+                {
+                    "type": "item",
+                    "id": 7
+                },
+                {
+                    "type": "item",
+                    "id": "8"
+                },
+                {
+                    "type": "container",
+                    "id": "2",
+                    "columns": [
+                        [
+                            {
+                                "type": "item",
+                                "id": "9"
+                            },
+                            {
+                                "type": "item",
+                                "id": "10"
+                            },
+                            {
+                                "type": "item",
+                                "id": "11"
+                            }
+                        ],
+                        [
+                            {
+                                "type": "item",
+                                "id": "12"
+                            },
+                            {
+                                "type": "container",
+                                "id": "3",
+                                "columns": [
+                                    [
+                                        {
+                                            "type": "item",
+                                            "id": "13"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "item",
+                                            "id": "14"
+                                        }
+                                    ]
+                                ]
+                            },
+                            {
+                                "type": "item",
+                                "id": "15"
+                            },
+                            {
+                                "type": "item",
+                                "id": "16"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "type": "item",
+                    "id": 16
+                }
+            ]
+        }
+    };																																																																																																																																																																																																								
+
+    $scope.$watch('models.dropzones', function(model) {
+        $scope.modelAsJson = angular.toJson(model, true);
+    }, true);
   // $scope.editorOptions = {
   //   language: 'en',
   //   allowedContent: true,

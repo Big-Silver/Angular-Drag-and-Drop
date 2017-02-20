@@ -43,3 +43,7 @@
   height: 850px;
   background: lightblue;
 }
+
+.droplist {
+  width: 100px;
+}
