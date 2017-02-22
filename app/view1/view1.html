@@ -19,105 +19,51 @@
         <div class="clearfix"></div>
     </div>
 </script>
-
-<script type="text/ng-template" id="item.html">
-    <div id="ckeditor1">
-        <div class="item">Item {{item.id}}</div>
-        <textarea data-ng-model="editor.value" data-ck-editor></textarea>
-    </div>    
+<script type="text/ng-template" id="layout.html">
+    <div class="layout-element box box-blue">
+        <h3>layout {{item.id}}</h3>
+        <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
+        <div class="clearfix"></div>
+    </div>
 </script>
-
 <script>
     // Turn off automatic editor creation first.
     CKEDITOR.disableAutoInline = true;
     CKEDITOR.inline( 'editor1' );
 </script>
-
-<!-- <div class="container" ng-controller="View1Ctrl">
-    <div class="col-md-10">
-        <div class="row">
-            <div ng-repeat="(zone, list) in models.dropzones" class="col-md-6">
-                <div class="dropzone box box-yellow">
-                    <h3>Dropzone {{zone}}</h3>
-                    <div ng-include="'list.html'"></div>
-                </div>
-            </div>
-        </div>
-
-        <h2>Generated Model</h2>
-        <pre>{{modelAsJson}}</pre>
-    </div>
-
-    <div class="col-md-2">
-
-        <div class="toolbox box box-grey box-padding">
-            <h3>New Elements</h3>
-            <ul>
-                <li ng-repeat="item in models.templates"
-                    dnd-draggable="item"
-                    dnd-effect-allowed="copy"
-                    dnd-copied="item.id = item.id + 1"
-                    >
-                    <button type="button" class="btn btn-default btn-lg" disabled="disabled">{{item.type}}</button>
-                </li>
-            </ul>
-        </div>
-
-        <div ng-if="models.selected" class="box box-grey box-padding">
-            <h3>Selected</h3>
-            <strong>Type: </strong> {{models.selected.type}}<br>
-            <input type="text" ng-model="models.selected.id" class="form-control" style="margin-top: 5px" />
-        </div>                                                                          
-
-        <div class="trashcan box box-grey box-padding">
-            <h3>Trashcan</h3>
-            <ul dnd-list="[]">
-                <li><img src="nested/trashcan.jpg"></li>
-            </ul>
-        </div>
-
-    </div>
-</div> -->
-
-
-
+<script type="text/ng-template" id="item.html">    
+    <div id="{{item.id}}" inline-text-editor  class="inline-text-editor ng-valid ng-dirty ng-valid-parse ng-touched" ng-init="cke_id='cke-'+itme.type+'-'+item.id" ng-focus = "editorFocus(item)" ng-blur = "editorBlur(item)" draggable="false" contenteditable="true" tabindex="0" spellcheck="false" role="textbox" arial-label="Rich Text Editor, {{item.id}}" title="Rich Text Editor, {{item.id}}">
+        {{item.text}}
+    </div>    
+</script>
 
 <div ng-controller="View1Ctrl" class="container">
     <div class="container-fluid">
         <div class="container1 row">
             <div class="settingPanel" ng-click="test()">
-                <div class="col-md-2">
-
-                    <div class="toolbox box box-grey box-padding">
-                        <h3>New Elements</h3>
-                        <ul class="droplist">
-                            <li ng-repeat="item in models.templates"
-                                dnd-draggable="item"
-                                dnd-effect-allowed="copy"
-                                dnd-copied="item.id = item.id + 1"
-                                >
-                                <button type="button" class="btn btn-default btn-lg" disabled="disabled">{{item.type}}</button>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div ng-if="models.selected" class="box box-grey box-padding">
-                        <h3>Selected</h3>
-                        <strong>Type: </strong> {{models.selected.type}}<br>
-                        <input type="text" ng-model="models.selected.id" class="form-control" style="margin-top: 5px" />
-                    </div>
+                <div class="toolbox box box-grey box-padding">
+                    <h3>New Elements</h3>
+                    <ul class="droplist">
+                        <li ng-repeat="item in models.templates"
+                            dnd-draggable="item"
+                            dnd-effect-allowed="copy"
+                            dnd-copied="item.id = item.id + 1"
+                            >
+                            {{item.type}}
+                        </li>
+                    </ul>
                 </div>
-                <!-- <ul id="contactList">
-                    <li>
-                        <div class="contact h-card" data-contact="0" draggable="true" tabindex="0">
-                            <img src="http://sdk.ckeditor.com/samples/assets/draganddrop/img/hfin.png" alt="avatar" class="u-photo">Huckleberry Finn</div>
-                    </li>
-                </ul> -->        
+
+                <div ng-if="models.selected" class="box box-grey box-padding">
+                    <h3>Selected</h3>
+                    <strong>Type: </strong> {{models.selected.type}}<br>
+                    <input type="text" ng-model="models.selected.id" class="form-control" style="margin-top: 5px" />
+                </div>       
             </div>
             <div class="mainContent">
                 <div id="editor1" contenteditable="true">
                     <h1>Inline Editing in Action!</h1>
-                    <p>The "div" element that contains this text is now editable.
+                    <p>The "div" element that contains this text is now editable.</p>
                 </div>
                 <div class="col-md-10">
                     <div class="row">
@@ -127,11 +73,12 @@
                                 <div ng-include="'list.html'"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <h2>Generated Model</h2>
-                    <pre>{{modelAsJson}}</pre>
+                    </div>                    
                 </div>
+            </div>
+            <div class="modelContent">
+                <h2>Generated Model</h2>
+                <pre>{{modelAsJson}}</pre>
             </div>
         </div>        
     </div>    
