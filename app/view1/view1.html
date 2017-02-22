@@ -31,7 +31,7 @@
     CKEDITOR.disableAutoInline = true;
     CKEDITOR.inline( 'editor1' );
 </script>
-<script type="text/ng-template" id="item.html">    
+<script type="text/ng-template" id="text.html">    
     <div id="{{item.id}}" inline-text-editor  class="inline-text-editor ng-valid ng-dirty ng-valid-parse ng-touched" ng-init="cke_id='cke-'+itme.type+'-'+item.id" ng-focus = "editorFocus(item)" ng-blur = "editorBlur(item)" draggable="false" contenteditable="true" tabindex="0" spellcheck="false" role="textbox" arial-label="Rich Text Editor, {{item.id}}" title="Rich Text Editor, {{item.id}}">
         {{item.text}}
     </div>    
@@ -49,7 +49,9 @@
                             dnd-effect-allowed="copy"
                             dnd-copied="item.id = item.id + 1"
                             >
-                            {{item.type}}
+                            <div class="panelItem">
+                                {{item.type}}
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -57,17 +59,25 @@
                 <div ng-if="models.selected" class="box box-grey box-padding">
                     <h3>Selected</h3>
                     <strong>Type: </strong> {{models.selected.type}}<br>
-                    <input type="text" ng-model="models.selected.id" class="form-control" style="margin-top: 5px" />
-                </div>       
+                    <input type="text" ng-model="models.selected.id" class="form-control"/>
+                </div> 
+                <div class="trashcan box box-grey box-padding">
+                    <h3>Trash</h3>
+                    <ul dnd-list="[]">
+                        <div class="trashcanRect">
+                            <span class="glyphicon glyphicon-trash"></span></p>
+                        </div>
+                    </ul>
+                </div>     
             </div>
             <div class="mainContent">
                 <div id="editor1" contenteditable="true">
                     <h1>Inline Editing in Action!</h1>
                     <p>The "div" element that contains this text is now editable.</p>
                 </div>
-                <div class="col-md-10">
+                <div class="dropzoneRect col-md-10">
                     <div class="row">
-                        <div ng-repeat="(zone, list) in models.dropzones" class="col-md-6">
+                        <div ng-repeat="(zone, list) in models.dropzones" class="col-md-10">
                             <div class="dropzone box box-yellow">
                                 <h3>Dropzone {{zone}}</h3>
                                 <div ng-include="'list.html'"></div>

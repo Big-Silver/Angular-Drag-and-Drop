@@ -33,16 +33,29 @@
   border: 1px solid #cccccc;
   width: 23%;
   height:850px;
-  background: #cccccc;
+  background: #61c9f1;
+}
+
+.panelItem {
+  width: 90%;
+  height: 70px;
+  text-align: center;
+  background: lightgoldenrodyellow;
+  margin-bottom: 20px;
 }
 
 .mainContent {
   border: 1px solid #cccccc;
   margin-left: 20px;
   margin-right: 20px;
-  width: 50%;
+  width: 45%;
   height: 850px;
-  background: lightblue;
+  background: #cde7f4;
+}
+
+.dropzoneRect {
+  left: 15%;
+  text-align: center;
 }
 
 .modelcontent {
@@ -51,9 +64,20 @@
   height: 850px;
 }
 
-.droplist {
-  width: 100px;
+.form-control {
+  width: 150px !important;
+  height: 39px !important;
+  margin-left: 30px !important;
 }
+
+.trashcanRect {
+  font-size: 100px;
+}
+
+.glyphicon .glyphicon-trash {
+  left: 30px;
+}
+
 /***************************** Dropzone Styling *****************************/
 
 /**
@@ -140,7 +164,7 @@
 
 .dropzone .layout-element .column {
     float: left;
-    width: 50%;
+    width: 33%;
 }
 
 /***************************** Toolbox *****************************/

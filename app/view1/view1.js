@@ -44,105 +44,13 @@ angular.module('myApp.view1', ['ngRoute', 'ang-drag-drop', 'dndLists'])
 	$scope.models = {
         selected: null,
         templates: [
-            {type: "item", id: 1, text: "Here is a text."},
+            {type: "text", id: 1, text: "Here is a text."},
             {type: "container", id: 1, columns: [[], []]},
             {type: "layout", id: 1, columns: [[], [], []]}
         ],
         dropzones: {
-            "A": [
-                {
-                    "type": "item",
-                    "id": "4",
-                    "text": "Here is a text."
-                },
-                {
-                    "type": "item",
-                    "id": "5",
-                    "text": "Here is a text."
-                },
-                {
-                    "type": "item",
-                    "id": "6",
-                    "text": "Here is a text."
-                }
+            "List1": [
             ]
-            // "B": [
-     //            {
-     //                "type": "item",
-     //                "id": 7,
-     //                "text": "1"
-     //            },
-     //            {
-     //                "type": "item",
-     //                "id": "8",
-     //                "text": "1"
-     //            },
-     //            {
-     //                "type": "container",
-     //                "id": "2",
-     //                "columns": [
-     //                    [
-     //                        {
-     //                            "type": "item",
-     //                            "id": "9",
-     //                			"text": "1"
-     //                        },
-     //                        {
-     //                            "type": "item",
-     //                            "id": "10",
-     //                			"text": "1"
-     //                        },
-     //                        {
-     //                            "type": "item",
-     //                            "id": "11",
-     //                			"text": "1"
-     //                        }
-     //                    ],
-     //                    [
-     //                        {
-     //                            "type": "item",
-     //                            "id": "12",
-     //                			"text": "1"
-     //                        },
-     //                        {
-     //                            "type": "container",
-     //                            "id": "3",
-     //                            "columns": [
-     //                                [
-     //                                    {
-     //                                        "type": "item",
-     //                                        "id": "13",
-     //            							"text": "1"
-     //                                    }
-     //                                ],
-     //                                [
-     //                                    {
-     //                                        "type": "item",
-     //                                        "id": "14",
-     //            							"text": "1"
-     //                                    }
-     //                                ]
-     //                            ]
-     //                        },
-     //                        {
-     //                            "type": "item",
-     //                            "id": "15",
-    	// 						"text": "1"
-     //                        },
-     //                        {
-     //                            "type": "item",
-     //                            "id": "16",
-    	// 						"text": "1"
-     //                        }
-     //                    ]
-     //                ]
-     //            },
-     //            {
-     //                "type": "item",
-     //                "id": 16,
-					// "text": "1"
-     //            }
-            // ]
         }
     };																																																																																																																																																																																																								
 
