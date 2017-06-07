@@ -1,5 +1,23 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <button class="col-md-1" ng-repeat="spell in spellArray1" ng-click="updateImg(spell)">
+          {{spell}}
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <button class="col-md-1" ng-repeat="spell in spellArray2" ng-click="updateImg(spell)">
+          {{spell}}
+        </button>
+      </div>
+    </div>    
+  </div>
+  <div class="row spell-image-board">
+    <div ng-repeat="img in spellImgArray">
+      <img ng-style="{'height': '200px', 'width': '200px'}" ng-src={{img}}/>
+    </div>
+  </div>
+</div>

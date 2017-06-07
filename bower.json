@@ -14,7 +14,8 @@
     "angular-native-dragdrop": "^1.2.2",
     "bootstrap": "v4.0.0-alpha.6",
     "angular-drag-and-drop-lists": "^2.1.0",
-    "angular-ui-bootstrap": "^2.5.0"
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-socialshare": "angularjs-socialshare#^2.3.8"
   },
   "resolutions": {
     "angular": "1.5.11"
